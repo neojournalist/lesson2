@@ -19,4 +19,4 @@ while counter2 > 0:
 word = input('Enter a word:')
 
 for i in range(len(word)):
-    print(word[i]*2)
+    print(f'{word[i]*2}', end="")
