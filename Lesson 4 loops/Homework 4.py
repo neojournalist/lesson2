@@ -18,5 +18,5 @@ while counter2 > 0:
 
 word = input('Enter a word:')
 
-for i in range(len(word)):
-    print(f'{word[i]*2}', end="")
+for i in word:
+    print(f'{i*2}', end="")
