@@ -25,9 +25,9 @@ print(today)
 somedate2 = datetime.strptime('04-12-2018', '%d-%m-%Y')
 print(somedate2)
 
-dateuser = input('Inout some date in this format (d:m:yyyy): ')
-somedate3 = datetime.strptime(dateuser, '%d:%m:%Y')
-print(somedate3)
+#dateuser = input('Input some date in this format (d:m:yyyy): ')
+#somedate3 = datetime.strptime(dateuser, '%d:%m:%Y')
+#print(somedate3)
 
 # strftime()
 now = datetime.now()
