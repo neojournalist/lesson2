@@ -72,7 +72,7 @@ myWorkerDict = {
         },
 }
 
-greeting = """Здравствуйте, дорогой Пользователь! 
+menu = """Здравствуйте, дорогой Пользователь! 
 Наберите определенную цифру из данного меню,
 чтобы получить доступ к нужному Вам функционалу!
 1 - Поиск сотрудника
@@ -90,14 +90,21 @@ greeting = """Здравствуйте, дорогой Пользователь!
 13 - Отобразить имена и кол-во детей всех сотрудников
 0 - Выход из Программы"""
 
-print(greeting)
-user = int(input('Выбор: '))
-if user == 1:
-    name = input("""Вы выбрали «Поиск сотрудника» 
+option = None
+while option !=0:
+    print(menu)
+
+    option = int(input('Выбор: '))
+
+    if option == 1:
+        nameSearch = input("""Вы выбрали «Поиск сотрудника» 
 Наберите имя сотрудника для поиска: """)
-    for a,b in myWorkerDict.items():
-     if name in b:
-      print(b)
+        for worker, workerDict in myWorkerDict.items():
+            for key, valueWorker in workerDict.items():
+                if valueWorker == nameSearch:
+                    for key, valueWorker in workerDict.items():
+                        print(key,valueWorker)
+
 
 
 
