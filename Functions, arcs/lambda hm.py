@@ -25,9 +25,5 @@ def main():
         print('Not working!')
 
 
-
-
-
-
 if __name__ == '__main__':
     main()

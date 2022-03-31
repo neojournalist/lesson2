@@ -105,6 +105,25 @@ while option !=0:
                     for key, valueWorker in workerDict.items():
                         print(key,valueWorker)
 
+ #   if option == 2:
+
+
+    if option == 3:
+        nameSearch2 = input("""Вы выбрали опцию "Удаление сотрудника".
+Наберите имя сотрудника для удаления с коллекции: """)
+        for worker, workerDict in myWorkerDict.items():
+            for key, valueWorker in workerDict.items():
+                if valueWorker == nameSearch2:
+                    del myWorkerDict[worker]
+                    print(f'Коллекция выглядит так:', myWorkerDict.update())
+                else:
+                    print('Такого сотрудника нет')
+    if option == 4:
+        numberWorkers = int(input('Сколько человек будут награждены?: '))
+        23
+
+
+
 
 
 
