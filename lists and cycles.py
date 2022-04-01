@@ -88,7 +88,52 @@ menu = """Здравствуйте, дорогой Пользователь!
 11 - Вывод суммарной З-П всех сотрудников
 12 - Виды транспорта всех сотрудников
 13 - Отобразить имена и кол-во детей всех сотрудников
+14 - Отобразить всех сотрудников
 0 - Выход из Программы"""
+
+def searchWorker(nameWorker):
+    for worker, workerDict in myWorkerDict.items():
+        for key, valueWorker in workerDict.items():
+            if valueWorker == nameSearch:
+                for key, valueWorker in workerDict.items():
+                    print(key, valueWorker)
+
+def addingWorker():
+    pass
+
+def deletingWorker():
+    pass
+
+def awardingWorker():
+    pass
+
+def vacWorker():
+    pass
+
+def increasingSalary():
+    pass
+
+def decreasingSalary():
+    pass
+
+def maxSalary():
+    pass
+
+def minSalary():
+    pass
+
+def avgSalary():
+    pass
+
+def sumSalary():
+    pass
+
+def transportWorker():
+    pass
+
+def childrenNums():
+    pass
+
 
 option = None
 while option !=0:
@@ -99,28 +144,24 @@ while option !=0:
     if option == 1:
         nameSearch = input("""Вы выбрали «Поиск сотрудника» 
 Наберите имя сотрудника для поиска: """)
-        for worker, workerDict in myWorkerDict.items():
-            for key, valueWorker in workerDict.items():
-                if valueWorker == nameSearch:
-                    for key, valueWorker in workerDict.items():
-                        print(key,valueWorker)
+        print(searchWorker(nameSearch))
 
- #   if option == 2:
+    elif option == 2:
+        
 
 
-    if option == 3:
+    elif option == 3:
         nameSearch2 = input("""Вы выбрали опцию "Удаление сотрудника".
 Наберите имя сотрудника для удаления с коллекции: """)
         for worker, workerDict in myWorkerDict.items():
             for key, valueWorker in workerDict.items():
                 if valueWorker == nameSearch2:
                     del myWorkerDict[worker]
-                    print(f'Коллекция выглядит так:', myWorkerDict.update())
+                    print(f'Коллекция выглядит так:', myWorkerDict)
                 else:
                     print('Такого сотрудника нет')
-    if option == 4:
+    elif option == 4:
         numberWorkers = int(input('Сколько человек будут награждены?: '))
-        23
 
 
 
