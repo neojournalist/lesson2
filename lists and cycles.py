@@ -99,7 +99,14 @@ def searchWorker(nameWorker):
                     print(key, valueWorker)
 
 def addingWorker():
-    pass
+
+
+
+
+
+
+
+
 
 def deletingWorker():
     pass
@@ -147,7 +154,54 @@ while option !=0:
         print(searchWorker(nameSearch))
 
     elif option == 2:
-        
+        print("""Вы выбрали опцию "Добавление нового сотрудника"
+        Для добавления информацию о новом сотруднике, заполните
+        следующие информации:""")
+        workerName = input('Введите ФИО нового сотрудника: ')
+        workerAge = int(input('Возраст: '))
+        workType = input('Род деятельности: ')
+        salary = int(input('Заработную плату: '))
+        spouseName = input('ФИО Супруга/и: ')
+        kidsNum = int(input('кол-во детей: '))
+        child = {}
+        for i in range(kidsNum):
+            childKey = 'Ребенок' + str(i + 1)
+            child[childKey] = input(f' Пожалуйста, введите имя для'
+                                    f'{i + 1} ребенка: ')
+
+        address = input('Адрес проживания: ')
+        car = input('Вид и модель транспорта: ')
+
+        countWorker = len(myWorkerDict) + 1
+        countWorkerKey = 'Сотрудник' + str(countWorker)
+        myWorkerDict[countWorkerKey] = {"ФИО:": workerName,
+                                        "Возраст:": workerAge,
+                                        "Род деятельности:": workType,
+                                        "Заработная плата:": salary,
+                                        "ФИО Супруга/и:": spouseName,
+                                        "Дети:": child,
+                                        "Транспорт:": car,
+                                        "Адрес проживания:": address
+                                        }
+        print('Новый словарь работников теперь выглядит так:')
+
+        for worker, workerDict in myWorkerDict.items():
+            print("===================")
+            print(f'{worker}:\n'
+                  f'===================')
+            for key, values in workerDict.items():
+                if key == "Дети":
+                    workerNameList = workerDict["ФИО"].split(" ")
+                    print(f'Дети {workerNameList[0]}а {workerNameList[1]}а : '
+                          f'\n************************')
+
+                    for child, childInfo in values.items():
+                        print(f'{child}: {childInfo}')
+                    print('************************')
+                if key == "Дети":
+                    continue
+                print(f'{key}: {values}')
+
 
 
     elif option == 3:
