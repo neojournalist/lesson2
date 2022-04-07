@@ -12,9 +12,8 @@ f19 = sheet['F19'].value
 print(f19)
 
 cells = sheet['A18':'H18']
-cellsdata = cells[0]
-
-print(cells)
-print(cellsdata)
 
 #for info in cellsdata:
+
+for a,s,d,f,g,h,j,k in cells:
+    print(a.value, s.value, d.value, f.value, g.value, h.value, j.value, k.value)
