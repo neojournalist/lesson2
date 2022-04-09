@@ -17,3 +17,6 @@ cells = sheet['A18':'H18']
 
 for a,s,d,f,g,h,j,k in cells:
     print(a.value, s.value, d.value, f.value, g.value, h.value, j.value, k.value)
+
+for data in list(cells[0][:6]):
+    print(data.value, end=" ")

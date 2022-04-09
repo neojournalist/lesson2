@@ -2,6 +2,7 @@ import openpyxl
 from openpyxl import *
 from openpyxl.styles import *
 
+
 wb = load_workbook('Book1.xlsx')
 sheet = wb.worksheets[0]
 name1Person = sheet['A2'].value
@@ -60,6 +61,24 @@ for i in range(6):
 
 wb2.save('infoStudent.xlsx')
 print('Successfully saved')
+
+wb2 = Workbook()
+
+sheet2 = wb.active
+
+dataExcel = (
+    ('Country', 'City', 'Language'),
+    ('Japan', 'Tokyo', 'Japanese'),
+    ('Kyrgyzstan', 'Bishkek', 'Kyrgyz'),
+    ('India', 'Deli', 'Hindu'),
+    ('Saudi Arabia', 'Er Riyad', 'Arabic'),
+    ('USA', 'DC', 'English')
+)
+
+for row in dataExcel:
+    sheet2.append(row)
+
+wb2.save('countryInfo.xlsx')
 
 
 
