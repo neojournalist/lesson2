@@ -31,26 +31,23 @@ print(f'Variance {stats.variance(listCells)}')
 print(f'St Deviation {stats.stdev(listCells)}')
 
 wb2 = Workbook()
-sheet2 = wb2.worksheets[0]
+sheet2 = wb2.active
 
-regionNames = ['JB', 'Naryn', 'IK', 'Osh', 'Talas']
-cityNames = ['ABS', 'Kls', 'Pmn', 'YKL', 'Jnm']
-population = [100, 200, 300, 500, 700]
-mayorName = ['OL', 'JV', 'GB', 'HY', 'TY']
 
-columnName1 = sheet2.cell(row=1, column=1).value = 'Region'
-columnName2 = sheet2.cell(row=1, column=2).value = 'City'
-columnName3 = sheet2.cell(row=1, column=3).value = 'Population'
-columnName4 = sheet2.cell(row=1, column=4).value = 'Mayor'
+dataInfo = (
+    ('Region', 'City', 'Population in 1000', 'Mayor'),
+    ('Naryn', 'Naryn', '300', 'ADB'),
+    ('Osh', 'Osh', '700', 'KLP'),
+    ('Talas', 'Talas', '100', 'GHN')
+)
 
-counter = 2
-for i in range(6):
-    sheet2.cell(row = counter, column = 1).value = regionNames[i]
-    sheet2.cell(row = counter, column = 2).value = cityNames[i]
-    sheet2.cell(row = counter, column = 3).value = population[i]
-    sheet2.cell(row = counter, column = 4).value = mayorName[i]
-    counter += 1
+for row in dataInfo:
+    sheet2.append(row)
 
-wb2.save('KGInfo.xlsx')
-print('Successfully saved')
+wb2.save('KGZInfo.xlsx')
+
+
+
+
+
 
