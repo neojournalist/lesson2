@@ -5,18 +5,28 @@ class Person:
         self.__addressPerson = address
         self.__can_vote = 'Yes'
 
+        if self.__agePerson >= 18:
+            self.__can_vote = True
+        else:
+            self.__can_vote = False
+
     def getAge(self):
         return self.__agePerson
 
     def setAge(self, newAge):
-        self.__agePerson = newAge
+
         if newAge >= 18:
+            self.__agePerson = newAge
             self.__can_vote = 'Yes'
         else:
-            self.__addressPerson = 'No'
+            self.__agePerson = newAge
+            self.__can_vote = 'No'
 
     def getVote(self):
-        return self.__can_vote
+        if self.__can_vote == False:
+            return 'Too young for voting'
+        else:
+            return 'Can vote'
 
     def displayInfo(self):
         print("Information about this person"
@@ -31,34 +41,35 @@ class BankAccount:
         self.__bankBalance = balance
 
     def setID(self, newID):
-        self.__bankId = str(newID)
+        self.__bankId = newID
 
-    def setBalance(self, finBalance):
-        self.__bankBalance = int(finBalance)
+    def setBalance(self, newBalance):
+        self.__bankBalance = newBalance
 
 
     def deposit(self, number):
-        newBalance = int(finBalance) + int(number)
-        print(f'Вы пополнили счет {id} на сумму: {number}'
-              f'Баланс после пополнения счета: {newBalance}')
+        newBalance = self.__bankBalance + number
+        print(f'Вы пополнили счет {self.__bankId} на сумму: {number}'
+              f'\nБаланс после пополнения счета: {newBalance}')
 
     def withdraw(self, amount):
-        newBalanceWithdraw = int(finBalance) - int(amount)
-        if finBalance > 0:
-            print(f'Вы сняли со счета {id} : {amount}'
-                f'Баланс после снятия со счета: {newBalanceWithdraw}')
+        newBalanceWithdraw = self.__bankBalance - amount
+        if newBalanceWithdraw > 0:
+            print(f'Вы сняли со счета {self.__bankId} : {amount}'
+                f'\nБаланс после снятия со счета: {newBalanceWithdraw}')
         else:
             print('У вас закончились деньги на балансе')
 
     def displayInfo(self):
-        print(f'Текущий баланс: {finBalance} сом')
+        print(f'Текущий баланс: {self.__bankBalance} сом')
 
+class VipAccount(BankAccount):
+    def vipServing(self):
+        print('First class service')
 
-
-
-
-
-
+class PremiumAccount(BankAccount):
+    def privileges(self):
+        print()
 
 def main():
     person1 = Person('Tina', 23, 'Mira 4')
@@ -66,6 +77,8 @@ def main():
 
     user1 = BankAccount('12373494954', 350)
     user1.displayInfo()
+    user1.deposit(100)
+    user1.withdraw(400)
 
 
 if __name__ == '__main__':
