@@ -51,15 +51,24 @@ class DrawingTeacher(Teacher):
         elif self.figureD == 'square':
             print('Books are in square form')
 
-class MathGeogTeacher(Teacher, MathTeacher, GeographyTeacher):
-    def __init__(self, name, exp, subject, students, country, number1, number2, number3):
-        Teacher.__init__(self, name, exp, subject, students)
-        MathTeacher.__init__(self, number1, number2, number3)
-        GeographyTeacher.__init__(self, country)
+
+#class MathGeogTeacher(Teacher, MathTeacher, GeographyTeacher):
+#    def __init__(self, name, exp, subject, students, number1, number2, number3, country):
+#        Teacher.__init__(self, name, exp, subject, students)
+#        MathTeacher.__init__(self, number1, number2, number3)
+#        GeographyTeacher.__init__(self, country)
 
     def introducing(self):
         print(f'My name is {self.__nameTeacher} and I teach Math and Geography')
 
+def main():
+    teacher1 = Teacher('AKB', 3, 'Math', 17)
+    teacher1.displayInfo()
+
+
+
+if __name__ == '__main__':
+    main()
 
 
 
