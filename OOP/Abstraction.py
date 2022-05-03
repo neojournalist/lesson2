@@ -26,6 +26,7 @@ class Circle(Figure):
 
     def find_square(self):
         result = pi * pow(self.radius, 2)
+        return result
 
 class Triangle(Figure):
     def __init__(self, nameFigure, color, a, h):
