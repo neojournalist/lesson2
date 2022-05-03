@@ -14,14 +14,12 @@ class Teacher:
 
 
 class MathTeacher(Teacher):
-    def __init__(self, name, exp, subject, students, number1, number2, number3):
+    def __init__(self, name, exp, subject, students):
         Teacher.__init__(self, name, exp, subject, students)
-        self.numb1 = number1
-        self.numb2 = number2
-        self.numb3 = number3
 
-    def findAvg(self):
-        result = (self.numb1 + self.numb2 + self.numb3) / 3
+
+    def findAvg(self, number1, number2, number3):
+        result = (number1 + number2 + number3) / 3
         print(f'the average number is {result}')
 
 
