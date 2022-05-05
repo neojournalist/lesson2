@@ -2,15 +2,14 @@ class Area:
     def __init__(self, h, w):
         self.height = h
         self.width = w
-        self.square = None
 
     def findArea(self):
-        self.square = self.height * self.width
-        print(self.square)
+        return self.height * self.width
+
 
     def __lt__(self, other):
-        if self.square < other.sqaure:
-            return True
+        if isinstance(other, Area):
+            return self.other < other.Area:
         else:
             return False
 
