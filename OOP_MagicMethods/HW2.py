@@ -1,9 +1,9 @@
 class Student:
-    def __init__(self, name, payment, marks, subjects):
+    def __init__(self, name, payment, marks, subjectList):
         self.nameStudent = name
         self.pay = payment
         self.marksStudent = marks
-        self.subject = subjects
+        self.subject = subjectList
 
     def __str__(self):
         return f'Students name: {self.nameStudent} '
@@ -105,19 +105,27 @@ class Student:
         return len(self.subject)
 
     def __call__(self, a, b):
-        return (self.marksStudent + a + b)/3
+        return ('Average mark of student',
+                sum(self.marksStudent.values())/len(self.marksStudent.values()))
 
     def __contains__(self, item):
-        if item in self.subject:
+        if item in self.subjectList:
             return True
 
         return False
 
     def display(self):
         print(f'Student: {self.nameStudent}'
-              f'Payment: {self.pay}'
-              f'Marks: {self.marksStudent}'
-              f'Subjects: {self.subject}')
+              f'Payment: {self.pay}')
+
+        if __name__ == '__main__':
+            for elem, subjectInfo in enumerate(self.marksStudent.items(),1):
+                print(f' {elem}. Mark for {subjectInfo[0]}: {subjectInfo[1]})
+                #print(f' {elem[0]}. Mark for {elem[1].key}: {elem[1].value}')
+
+            print('Subjects failed')
+            for subjectName in enumerate(self.subject):
+                print(subjectName)
 
     def display_using_generator(self):
         pass
@@ -125,7 +133,7 @@ class Student:
     #enumerate
 
 def main():
-    s1 = Student('Peter', 2000, 3, 'Physics')
+    s1 = Student('Peter', 2000, {'Math': 3, 'Geography': 5, 'English': 2}, ['Physics', 'Geometry'])
     s2 = Student('Mary', 1000, 5, 'Math')
 
     print(s1)
