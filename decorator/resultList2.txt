@@ -1,0 +1,8 @@
+All the elements in the List: 
+32
+54
+546
+65
+__________________
+Sum of the elements is 697
+__________________
