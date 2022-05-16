@@ -3,6 +3,7 @@ class FindType:
         self.funct = funct
 
     def __call__(self, *args):
+        self.funct(*args)
         for i in args:
             if type(i) == int:
                 print(f'{i} is integer type')
@@ -12,12 +13,14 @@ class FindType:
                 print(f'{i} is a list')
             else:
                 print(f'{i} is undefined')
+        print('************')
 
 class FindSumList:
     def __init__(self, funct):
         self.funct = funct
 
     def __call__(self, *args):
+        self.funct(*args)
         for i in args:
             if type(i) == list:
                 print(f'{i} is a list \n'
@@ -28,7 +31,7 @@ class FindSumList:
 @FindSumList
 @FindType
 def simpleFunction(*args):
-    print(f'Define types for each value: \n {args}')
+    print(f'Define types for each value: \n{args} \n************')
 
 
 def main():
